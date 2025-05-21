@@ -7,7 +7,6 @@ class Category(models.Model):
         return self.name
 
     def __iter__(self):
-        # Реализация __iter__ для соответствия заданию
         yield self.name
 
 class Recipe(models.Model):
@@ -17,7 +16,7 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='recipes')
 
     def __str__(self):
         return self.title

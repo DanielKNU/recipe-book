@@ -1,6 +1,6 @@
 from pathlib import Path
-import os
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
@@ -18,7 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'recipe',
+    'recipe.apps.RecipeConfig',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +54,7 @@ WSGI_APPLICATION = 'recipe_book.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': ':memory:',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
