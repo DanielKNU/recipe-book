@@ -7,7 +7,8 @@ class Category(models.Model):
         return self.name
 
     def __iter__(self):
-        return iter([self.name])
+        # Реализация __iter__ для соответствия заданию
+        yield self.name
 
 class Recipe(models.Model):
     title = models.CharField(max_length=200)
